@@ -1,0 +1,207 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="mwcalc01" default="all">
+  
+  
+  <property file="mwcalc01.properties"/>
+  <!-- Uncomment the following property if no tests compilation is needed -->
+  <!-- 
+  <property name="skip.tests" value="true"/>
+   -->
+  
+  <!-- Compiler options -->
+  
+  <property name="compiler.debug" value="on"/>
+  <property name="compiler.generate.no.warnings" value="off"/>
+  <property name="compiler.args" value=""/>
+  <property name="compiler.max.memory" value="700m"/>
+  <patternset id="ignored.files">
+    <exclude name="**/*.hprof/**"/>
+    <exclude name="**/*.pyc/**"/>
+    <exclude name="**/*.pyo/**"/>
+    <exclude name="**/*.rbc/**"/>
+    <exclude name="**/*.yarb/**"/>
+    <exclude name="**/*~/**"/>
+    <exclude name="**/.DS_Store/**"/>
+    <exclude name="**/.git/**"/>
+    <exclude name="**/.hg/**"/>
+    <exclude name="**/.svn/**"/>
+    <exclude name="**/CVS/**"/>
+    <exclude name="**/__pycache__/**"/>
+    <exclude name="**/_svn/**"/>
+    <exclude name="**/vssver.scc/**"/>
+    <exclude name="**/vssver2.scc/**"/>
+  </patternset>
+  <patternset id="library.patterns">
+    <include name="*.war"/>
+    <include name="*.swc"/>
+    <include name="*.zip"/>
+    <include name="*.egg"/>
+    <include name="*.ear"/>
+    <include name="*.ane"/>
+    <include name="*.jar"/>
+    <include name="*.klib"/>
+  </patternset>
+  <patternset id="compiler.resources">
+    <exclude name="**/?*.java"/>
+    <exclude name="**/?*.form"/>
+    <exclude name="**/?*.class"/>
+    <exclude name="**/?*.groovy"/>
+    <exclude name="**/?*.scala"/>
+    <exclude name="**/?*.flex"/>
+    <exclude name="**/?*.kt"/>
+    <exclude name="**/?*.clj"/>
+  </patternset>
+  
+  <!-- JDK definitions -->
+  
+  <property name="jdk.bin.11" value="${jdk.home.11}/bin"/>
+  <path id="jdk.classpath.11">
+    <fileset dir="${jdk.home.11}">
+      <include name="../../../../home/erika/Downloads/idea-IC-192.5728.98/jbr!/java.base"/>
+      <include name="../../../../home/erika/Downloads/idea-IC-192.5728.98/jbr!/java.compiler"/>
+      <include name="../../../../home/erika/Downloads/idea-IC-192.5728.98/jbr!/java.datatransfer"/>
+      <include name="../../../../home/erika/Downloads/idea-IC-192.5728.98/jbr!/java.desktop"/>
+      <include name="../../../../home/erika/Downloads/idea-IC-192.5728.98/jbr!/java.instrument"/>
+      <include name="../../../../home/erika/Downloads/idea-IC-192.5728.98/jbr!/java.logging"/>
+      <include name="../../../../home/erika/Downloads/idea-IC-192.5728.98/jbr!/java.management"/>
+      <include name="../../../../home/erika/Downloads/idea-IC-192.5728.98/jbr!/java.management.rmi"/>
+      <include name="../../../../home/erika/Downloads/idea-IC-192.5728.98/jbr!/java.naming"/>
+      <include name="../../../../home/erika/Downloads/idea-IC-192.5728.98/jbr!/java.net.http"/>
+      <include name="../../../../home/erika/Downloads/idea-IC-192.5728.98/jbr!/java.prefs"/>
+      <include name="../../../../home/erika/Downloads/idea-IC-192.5728.98/jbr!/java.rmi"/>
+      <include name="../../../../home/erika/Downloads/idea-IC-192.5728.98/jbr!/java.scripting"/>
+      <include name="../../../../home/erika/Downloads/idea-IC-192.5728.98/jbr!/java.se"/>
+      <include name="../../../../home/erika/Downloads/idea-IC-192.5728.98/jbr!/java.security.jgss"/>
+      <include name="../../../../home/erika/Downloads/idea-IC-192.5728.98/jbr!/java.security.sasl"/>
+      <include name="../../../../home/erika/Downloads/idea-IC-192.5728.98/jbr!/java.smartcardio"/>
+      <include name="../../../../home/erika/Downloads/idea-IC-192.5728.98/jbr!/java.sql"/>
+      <include name="../../../../home/erika/Downloads/idea-IC-192.5728.98/jbr!/java.sql.rowset"/>
+      <include name="../../../../home/erika/Downloads/idea-IC-192.5728.98/jbr!/java.transaction.xa"/>
+      <include name="../../../../home/erika/Downloads/idea-IC-192.5728.98/jbr!/java.xml"/>
+      <include name="../../../../home/erika/Downloads/idea-IC-192.5728.98/jbr!/java.xml.crypto"/>
+      <include name="../../../../home/erika/Downloads/idea-IC-192.5728.98/jbr!/javafx.base"/>
+      <include name="../../../../home/erika/Downloads/idea-IC-192.5728.98/jbr!/javafx.controls"/>
+      <include name="../../../../home/erika/Downloads/idea-IC-192.5728.98/jbr!/javafx.fxml"/>
+      <include name="../../../../home/erika/Downloads/idea-IC-192.5728.98/jbr!/javafx.graphics"/>
+      <include name="../../../../home/erika/Downloads/idea-IC-192.5728.98/jbr!/javafx.media"/>
+      <include name="../../../../home/erika/Downloads/idea-IC-192.5728.98/jbr!/javafx.swing"/>
+      <include name="../../../../home/erika/Downloads/idea-IC-192.5728.98/jbr!/javafx.web"/>
+      <include name="../../../../home/erika/Downloads/idea-IC-192.5728.98/jbr!/jdk.accessibility"/>
+      <include name="../../../../home/erika/Downloads/idea-IC-192.5728.98/jbr!/jdk.aot"/>
+      <include name="../../../../home/erika/Downloads/idea-IC-192.5728.98/jbr!/jdk.attach"/>
+      <include name="../../../../home/erika/Downloads/idea-IC-192.5728.98/jbr!/jdk.charsets"/>
+      <include name="../../../../home/erika/Downloads/idea-IC-192.5728.98/jbr!/jdk.compiler"/>
+      <include name="../../../../home/erika/Downloads/idea-IC-192.5728.98/jbr!/jdk.crypto.cryptoki"/>
+      <include name="../../../../home/erika/Downloads/idea-IC-192.5728.98/jbr!/jdk.crypto.ec"/>
+      <include name="../../../../home/erika/Downloads/idea-IC-192.5728.98/jbr!/jdk.dynalink"/>
+      <include name="../../../../home/erika/Downloads/idea-IC-192.5728.98/jbr!/jdk.httpserver"/>
+      <include name="../../../../home/erika/Downloads/idea-IC-192.5728.98/jbr!/jdk.internal.ed"/>
+      <include name="../../../../home/erika/Downloads/idea-IC-192.5728.98/jbr!/jdk.internal.jvmstat"/>
+      <include name="../../../../home/erika/Downloads/idea-IC-192.5728.98/jbr!/jdk.internal.le"/>
+      <include name="../../../../home/erika/Downloads/idea-IC-192.5728.98/jbr!/jdk.internal.vm.ci"/>
+      <include name="../../../../home/erika/Downloads/idea-IC-192.5728.98/jbr!/jdk.internal.vm.compiler"/>
+      <include name="../../../../home/erika/Downloads/idea-IC-192.5728.98/jbr!/jdk.internal.vm.compiler.management"/>
+      <include name="../../../../home/erika/Downloads/idea-IC-192.5728.98/jbr!/jdk.jdi"/>
+      <include name="../../../../home/erika/Downloads/idea-IC-192.5728.98/jbr!/jdk.jdwp.agent"/>
+      <include name="../../../../home/erika/Downloads/idea-IC-192.5728.98/jbr!/jdk.jfr"/>
+      <include name="../../../../home/erika/Downloads/idea-IC-192.5728.98/jbr!/jdk.jsobject"/>
+      <include name="../../../../home/erika/Downloads/idea-IC-192.5728.98/jbr!/jdk.localedata"/>
+      <include name="../../../../home/erika/Downloads/idea-IC-192.5728.98/jbr!/jdk.management"/>
+      <include name="../../../../home/erika/Downloads/idea-IC-192.5728.98/jbr!/jdk.management.agent"/>
+      <include name="../../../../home/erika/Downloads/idea-IC-192.5728.98/jbr!/jdk.management.jfr"/>
+      <include name="../../../../home/erika/Downloads/idea-IC-192.5728.98/jbr!/jdk.naming.dns"/>
+      <include name="../../../../home/erika/Downloads/idea-IC-192.5728.98/jbr!/jdk.naming.rmi"/>
+      <include name="../../../../home/erika/Downloads/idea-IC-192.5728.98/jbr!/jdk.net"/>
+      <include name="../../../../home/erika/Downloads/idea-IC-192.5728.98/jbr!/jdk.pack"/>
+      <include name="../../../../home/erika/Downloads/idea-IC-192.5728.98/jbr!/jdk.scripting.nashorn"/>
+      <include name="../../../../home/erika/Downloads/idea-IC-192.5728.98/jbr!/jdk.scripting.nashorn.shell"/>
+      <include name="../../../../home/erika/Downloads/idea-IC-192.5728.98/jbr!/jdk.sctp"/>
+      <include name="../../../../home/erika/Downloads/idea-IC-192.5728.98/jbr!/jdk.security.auth"/>
+      <include name="../../../../home/erika/Downloads/idea-IC-192.5728.98/jbr!/jdk.security.jgss"/>
+      <include name="../../../../home/erika/Downloads/idea-IC-192.5728.98/jbr!/jdk.unsupported"/>
+      <include name="../../../../home/erika/Downloads/idea-IC-192.5728.98/jbr!/jdk.xml.dom"/>
+      <include name="../../../../home/erika/Downloads/idea-IC-192.5728.98/jbr!/jdk.zipfs"/>
+    </fileset>
+  </path>
+  
+  <property name="project.jdk.home" value="${jdk.home.11}"/>
+  <property name="project.jdk.bin" value="${jdk.bin.11}"/>
+  <property name="project.jdk.classpath" value="jdk.classpath.11"/>
+  <!-- Register Custom Compiler Taskdefs -->
+  <property name="javac2.home" value="${idea.home}/lib"/>
+  <path id="javac2.classpath">
+    <fileset dir="${javac2.home}">
+      <include name="javac2.jar"/>
+      <include name="jdom.jar"/>
+      <include name="asm-all*.jar"/>
+      <include name="forms-*.jar"/>
+    </fileset>
+  </path>
+  <target name="register.custom.compilers">
+    <taskdef name="javac2" classname="com.intellij.ant.Javac2" classpathref="javac2.classpath"/>
+    <taskdef name="instrumentIdeaExtensions" classname="com.intellij.ant.InstrumentIdeaExtensions" classpathref="javac2.classpath"/>
+  </target>
+  
+  <!-- Modules -->
+  
+  <import file="${basedir}/module_mwcalc01.xml"/>
+  
+  <target name="init" description="Build initialization">
+    <!-- Perform any build initialization in this target -->
+  </target>
+  
+  <target name="clean" depends="clean.module.mwcalc01, clean.artifact.javafxapp" description="cleanup all"/>
+  
+  <target name="build.modules" depends="init, clean, compile.module.mwcalc01" description="build all modules"/>
+  
+  <target name="init.artifacts">
+    <property name="artifacts.temp.dir" value="${basedir}/__artifacts_temp"/>
+    <property name="artifact.output.javafxapp" value="${basedir}/out/artifacts/JavaFXApp"/>
+    <mkdir dir="${artifacts.temp.dir}"/>
+    <property name="artifact.temp.output.JavaFXApp" value="${artifacts.temp.dir}/JavaFXApp.jar"/>
+    <taskdef resource="com/sun/javafx/tools/ant/antlib.xml" uri="javafx:com.sun.javafx.tools.ant" classpath="${jdk.home.11}/lib/ant-javafx.jar"/>
+  </target>
+  
+  <target name="clean.artifact.javafxapp" description="clean JavaFXApp artifact output">
+    <delete dir="${artifact.output.javafxapp}"/>
+  </target>
+  
+  <target name="artifact.javafxapp" depends="init.artifacts, compile.module.mwcalc01" description="Build &#39;JavaFXApp&#39; artifact" xmlns:fx="javafx:com.sun.javafx.tools.ant">
+    <mkdir dir="${artifact.output.javafxapp}"/>
+    <copy todir="${artifact.temp.output.JavaFXApp}">
+      <fileset dir="${mwcalc01.output.dir}"/>
+    </copy>
+    <fx:fileset id="all_but_JavaFXApp" dir="${artifact.temp.output.JavaFXApp}" includes="**/*.jar">
+      <exclude name="JavaFXApp.jar"/>
+    </fx:fileset>
+    <fx:fileset id="all_JavaFXApp" dir="${artifact.temp.output.JavaFXApp}" includes="**/*.jar"/>
+    <fx:application id="JavaFXApp_id" name="JavaFXApp" mainClass="sample.Main"/>
+    <fx:jar destfile="${artifact.temp.output.JavaFXApp}/JavaFXApp.jar">
+      <fx:application refid="JavaFXApp_id"/>
+      <fileset dir="${artifact.temp.output.JavaFXApp}" excludes="**/*.jar"/>
+      <fx:resources>
+        <fx:fileset refid="all_but_JavaFXApp"/>
+      </fx:resources>
+    </fx:jar>
+    <fx:deploy width="600" height="400" updatemode="background" outdir="${artifact.temp.output.JavaFXApp}/deploy" outfile="JavaFXApp">
+      <fx:application refid="JavaFXApp_id"/>
+      <fx:resources>
+        <fx:fileset refid="all_JavaFXApp"/>
+      </fx:resources>
+    </fx:deploy>
+    <copy todir="${artifact.output.javafxapp}">
+      <fileset dir="${artifact.temp.output.JavaFXApp}/deploy"/>
+    </copy>
+    <delete includeemptydirs="true">
+      <fileset dir="${artifact.temp.output.JavaFXApp}"/>
+    </delete>
+  </target>
+  
+  <target name="build.all.artifacts" depends="artifact.javafxapp" description="Build all artifacts">
+    
+    <!-- Delete temporary files -->
+    <delete dir="${artifacts.temp.dir}"/>
+  </target>
+  
+  <target name="all" depends="build.modules, build.all.artifacts" description="build all"/>
+</project>
